@@ -35,3 +35,5 @@ npm run app:dist
 ```shell
 npm run app:asar
 ```
+
+测试中，打asar包时，运行 shell有问题，待解决（已经解决）。

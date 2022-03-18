@@ -1,9 +1,20 @@
 const exec = require('child_process').exec
 
+function isBuild(url){
+  return (url.indexOf("Resources") != -1) 
+}
+
 function start () {
     const path = require('path')
     console.log("load--server---");
-    let _path = path.join(__dirname, '../www/server/mac');
+    let _path = path.join(__dirname,"./")
+    console.log("server _path::",_path);
+    if (isBuild(_path)){
+      _path = path.join(__dirname, '../../www/server/mac');//打包的
+    }else{
+      _path = path.join(__dirname, '../www/server/mac');//dev
+    }
+    console.log("server path::",_path);
     // 任何你期望执行的cmd命令，ls都可以
     let cmdStr1 = 'chmod a+x ./main && ./main '//'./main' //'ls'
     let cmdPath = _path //'./'
@@ -28,6 +39,8 @@ function start () {
     })
   }
 }
+
+
 
 start();
 

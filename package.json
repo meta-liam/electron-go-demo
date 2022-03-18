@@ -27,16 +27,16 @@
     "productName":"liam-go-demo",
     "appId": "com.liam.electron01",
     "mac": {
-      "category": "your.app.category.type"
-    },
-    "extraResources":  { 
-      "from": "./www",
-      "to": "./app/www"
+      "category": "your.app.category.type",
+      "extraResources":  { 
+        "from": "./www/server/mac",
+        "to": "./www/server/mac"
+      }
     },
     "files": [
       "**/*",
       "!docs/*",
-      "!test/*",
+      "!www/server/*",
       "!.DS_Store",
       "!*.md"
     ]
